@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>Posts Publicados</h1>    
+    
+    <p v-if="showLoadingMessage">Cargando...</p>
+   
+    <div v-for="post in posts" :key="post.id">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.body }}</p> 
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+    };
+  },
+  computed: {
+    posts() {
+      return this.$store.state.posts;
+    },
+    showLoadingMessage() {
+      return this.$store.state.posts.length == 0;
+    }
+  },
+  methods: {},
+  async mounted() {
+    await this.$store.dispatch('fetchPosts');
+  },
+};
 </script>
