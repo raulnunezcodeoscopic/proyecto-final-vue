@@ -1,14 +1,16 @@
 <template>
   <div id="app">
     <custom-navbar />
-    <router-view/>
+    <router-view />
+    <custom-footer />
   </div>
 </template>
 
 <script>
 import CustomNavbar from '@/components/CustomNavbar.vue'
+import CustomFooter from '@/components/CustomFooter.vue'
 export default {
-  components: {CustomNavbar},
+  components: {CustomNavbar, CustomFooter},
   setup() {
   }
 }
