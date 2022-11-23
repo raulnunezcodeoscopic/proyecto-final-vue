@@ -1,8 +1,18 @@
 <template>
   <div id="app">
+    <custom-navbar />
     <router-view/>
   </div>
 </template>
+
+<script>
+import CustomNavbar from '@/components/CustomNavbar.vue'
+export default {
+  components: {CustomNavbar},
+  setup() {
+  }
+}
+</script>
 
 <style>
 #app {
