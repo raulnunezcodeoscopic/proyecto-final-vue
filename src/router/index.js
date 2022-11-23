@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ContactView from '../views/ContactView.vue'
 import AuthorView from '../views/AuthorView.vue'
+import PostView from '../views/PostView.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/author',
     name: 'author',
     component: AuthorView
+  },
+  {
+    path: '/post/:id',
+    name: 'post',
+    component: PostView
   }
 ]
 
