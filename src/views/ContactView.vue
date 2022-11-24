@@ -1,13 +1,22 @@
 <template>
   <div>
     <h1>Contacto</h1>
-    <div>
-        <p v-if="sentForm">Formulario enviado correctamente</p>
-        <input type="text" name="name" placeholder="Nombre" v-model="name" />
-        <input type="email" name="email" placeholder="Email" v-model="email" />
-        <textarea name="message" placeholder="Mensaje" v-model="message"></textarea>
-        <base-button :disabled="buttonDisabled" @click="submitForm()">Enviar</base-button>
-    </div>
+    <br />
+    <section class="w-100 p-4 d-flex justify-content-center pb-4">
+      <div class="custom-width">
+          <p v-if="sentForm">Formulario enviado correctamente</p>
+          <div class="form-outline mb-4">
+            <input type="text" name="name" v-model="name" class="form-control" placeholder="Nombre" />
+          </div>
+          <div class="form-outline mb-4">
+            <input type="email" name="email" v-model="email" class="form-control" placeholder="Email" />
+          </div>
+          <div class="form-outline mb-4">
+            <textarea name="message" placeholder="Mensaje" class="form-control" v-model="message"></textarea>
+          </div>
+          <base-button :disabled="buttonDisabled" @click="submitForm()">Enviar</base-button>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -58,3 +67,10 @@ export default {
     
 }
 </script>
+<style scoped>
+    
+    .custom-width {
+        width: 26rem;
+    }
+
+</style>

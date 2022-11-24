@@ -1,5 +1,5 @@
 <template>
-<button class="button" :disabled="disabled" @click="$emit('click', $event)">
+<button :disabled="disabled" @click="$emit('click', $event)" class="btn btn-primary btn-block mb-4">
   <slot>Text</slot>
 </button>
 </template>

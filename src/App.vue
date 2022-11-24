@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <custom-navbar />
-    <router-view />
+    <div class="p-5 text-center bg-light">
+      <router-view />
+    </div>
     <custom-footer />
   </div>
 </template>
@@ -17,24 +19,13 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
 nav {
   padding: 30px;
+  text-align: center;
 }
 
 nav a {
   font-weight: bold;
   color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
